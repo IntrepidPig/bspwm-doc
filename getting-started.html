@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Getting started with BSPWM</title>
+		<link rel="stylesheet" href="stylesheet.css">
+	</head>
+	<body>
+		<div class="content">
+			<h1>The BSPWM Getting Started Guide</h1>
+			<p>In this guide I will walk you through installing BSPWM and configuring the basics to have a functional system. A more in depth documentation of BSPWM will be available at the full <a href="documentation.html">documentation</a>.</p>
+			<h2>Index:</h2>
+			<ol>
+				<li>Intro</li>
+				<li>Installation</li>
+				<li>Configuration
+					<ol>
+						<li>Starting</li>
+						<li>Basic Configuration<li>
+					</ol>						
+				</li>
+				<li>Troubleshooting</li>
+			</ol>
+			<h2>Intro</h2>
+			<p>BSPWM is a lightweight tiling window manager that can be great to practically anybody. It works by setting a certain amount of desktops (otherwise known as workspaces) and arranging windows in a tiled fashion for each one. The entire program is controlled mostly if not completely by keyboard shortcuts created by the user than run commands to change things. BSPWM by itself cannot do much, and requires sxhkd (or another keyboard shortcut manager) to be able to recieve user input and respond accordingly.</p>
+			<p>When a program is run, it is placed in a tree, splitting the current branch. (insert complicated tree logic here) Windows can have 4 states, tiled pseudo_tiled, floating and fullscreen.</p>
+			<ul>
+				<li><em>Tiled</em> means the window's size will fill up the maximum area possible without overlapping other windows around it. It will stay in it's set location based on it's position in the window tree.
+				<li><em>Pseudo Tiled</em> is the same as tiled except the window can be resized at will. The position stays the same though.
+				<li><em>Floating</em> means the window can be placed anywhere on the desktop and resized at will.
+				<li><em>Fullscreen</em></li> is pretty self explanatory.
+			</ul>
+			<p>Any window whose state has changed can be reverted back to tiled without modifying the tree layout</p>
+			<p>BSPWM is bare-bones, and only comes with pure window manager functionality. This isn't a bad thing though, it just means you have to configure everything else, which means everything can be the way you like it. You can install any bar like lemonbar, dzen2, or polybar. You can also control things like the background with cool things like scripts that change it based on your battery level. You can even run programs your way, with programs like rofi, dmenu, or even plank. However, all this configuration is no small task and it can take a while to get everything the way you want it, or even working at all.</p>
+			<h2>Installation:</h2>
+			<p>It is likely that there is a package for BSPWM for your distribution. In the case that there isn't, you can build from the source on any distribution. The instruction for this can be found in the repository <a href="https://github.com/baskerville/bspwm/blob/master/doc/INSTALL.md">here</a>.</p>
+			<h2>Configuration</h2>
+			<h3>Starting</h3>
+			<p>BSPWM can be started by putting it in your xinitrc, but the easier method for beginners is to install a display manager and select BSPWM as a session. I recommend installing LightDM and rebooting. You will then be able to select BSPWM from a menu in the top right.</p>
+			<p>However, before you jump straight in to starting BSPWM, you should go through basic configuration to ensure you aren't greeted by a black screen with no input available.</p>
+			<h3>Basic Configuration</h3>
+			<p>Without basic configuration, BSPWM will not be able to do anything other than show a black screen with a mouse cursor. The <a href="https://github.com/baskerville/bspwm/tree/master/examples">github repository</a> has an example configuration to get you started with BSPWM. You can simply copy the file, but I recommend you copy it by hand. In my experience, I found it helped immensely with learning the keyboard shortcuts and understanding the workings of BSPWM. It's up to you though, both methods should work.
+			<p>BSPWM is configured by a shell script that it runs when it starts. This script is located at <span class="code">.config/bspwm/bspwmrc</span>. This script will start all your daemons and stuff like a status bar and compton, as well as your keyboard shortcut manager, sxhkd. It will also run different <span class="code">bspc</span> commands to configure your bspwm session. The <span class="code">bspc</span> command configures options such as the width of the border around windows, the gap inbetween the windows, etc. It's also the command that controls your bspwm session by focusing windows, changing desktops, and more.</p>
+			<p>You can go ahead and create a <span class="code">bspwmrc</span> file and put the stuff you see in the example there. This file doesn't matter that much in this stage. All that's truly necessary is that it starts the keyboard shortcut daemon, sxhkd and creates the desktops.</p>
+			<p>Once you've done that, you can create an <span class="code">sxhkdrc</span> file in <span class="code">.config/sxhkd/</span>. This is the file that contains the keyboard shortcut configuration, and I highly recommend you copy it by hand. This way you can omit the stuff you don't think you need and add the rest of the stuff you think you do. It will also help you remember the shortcuts better, one of the hardest parts of getting started with a tiling window manager for the first time.</p>
+			<br>
+			<p>All right, once all this is done, you should be able to start a bspwm session and navigate a little bit. If there's something wrong, check the troubleshooting section. If all goes well, congratulations! You have your first functioning BSPWM setup! Now you can go deeper into the configuration and really rice your system with some information at the <a href="documentation.html">full documentation</a>.
+		</div>
+
+	</body>
+</html>
