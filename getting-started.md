@@ -12,7 +12,7 @@ In this guide I will walk you through installing BSPWM and configuring the basic
 4. Conclusion
 
 ## Intro
-BSPWM is a lightweight tiling window manager that can be great to practically anybody. It works by setting a certain amount of desktops (otherwise known as workspaces) and arranging windows in a tiled fashion for each one. The entire program is controlled mostly if not completely by keyboard shortcuts created by the user than run commands to change things. BSPWM by itself cannot do much, and requires sxhkd (or another keyboard shortcut manager) to be able to recieve user input and respond accordingly.
+BSPWM is a lightweight tiling window manager that can be great to practically anybody. It works by setting a certain amount of desktops (otherwise known as workspaces) and arranging windows in a tiled fashion for each one. The entire program is controlled mostly if not completely by keyboard shortcuts created by the user that run commands to change things. BSPWM by itself cannot do much, and requires sxhkd (or another keyboard shortcut manager) to be able to recieve user input and respond accordingly.
 
 When a program is run, it is placed in a tree, splitting the current branch. (insert complicated tree logic here) Windows can have 4 states, tiled pseudo_tiled, floating and fullscreen.
 
